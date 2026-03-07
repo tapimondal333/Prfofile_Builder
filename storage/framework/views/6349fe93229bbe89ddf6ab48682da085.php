@@ -1,1 +1,0 @@
-<?php /**PATH D:\xampp\htdocs\profile_builder\resources\views/About/education.blade.php ENDPATH**/ ?>
