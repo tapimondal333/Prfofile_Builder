@@ -60,12 +60,12 @@ email.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:94
  * @route '/password/email'
  */
-export const email = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: email.url(options),
+export const sendResetLink = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: sendResetLink.url(options),
     method: 'post',
 })
 
-email.definition = {
+sendResetLink.definition = {
     methods: ["post"],
     url: '/password/email',
 } satisfies RouteDefinition<["post"]>
@@ -75,8 +75,8 @@ email.definition = {
  * @see app/Http/Controllers/AuthController.php:94
  * @route '/password/email'
  */
-email.url = (options?: RouteQueryOptions) => {
-    return email.definition.url + queryParams(options)
+sendResetLink.url = (options?: RouteQueryOptions) => {
+    return sendResetLink.definition.url + queryParams(options)
 }
 
 /**
@@ -84,8 +84,8 @@ email.url = (options?: RouteQueryOptions) => {
  * @see app/Http/Controllers/AuthController.php:94
  * @route '/password/email'
  */
-email.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: email.url(options),
+sendResetLink.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: sendResetLink.url(options),
     method: 'post',
 })
 
@@ -94,8 +94,8 @@ email.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:94
  * @route '/password/email'
  */
-    const emailForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: email.url(options),
+    const sendResetLinkForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: sendResetLink.url(options),
         method: 'post',
     })
 
@@ -104,12 +104,12 @@ email.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:94
  * @route '/password/email'
  */
-        emailForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: email.url(options),
+        sendResetLinkForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: sendResetLink.url(options),
             method: 'post',
         })
     
-    email.form = emailForm
+    sendResetLink.form = sendResetLinkForm
 /**
 * @see \Laravel\Fortify\Http\Controllers\NewPasswordController::update
  * @see vendor/laravel/fortify/src/Http/Controllers/NewPasswordController.php:55
@@ -170,12 +170,12 @@ update.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:112
  * @route '/password/reset'
  */
-export const update = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+export const resetPassword = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: update.url(options),
     method: 'post',
 })
 
-update.definition = {
+resetPassword.definition = {
     methods: ["post"],
     url: '/password/reset',
 } satisfies RouteDefinition<["post"]>
@@ -185,8 +185,8 @@ update.definition = {
  * @see app/Http/Controllers/AuthController.php:112
  * @route '/password/reset'
  */
-update.url = (options?: RouteQueryOptions) => {
-    return update.definition.url + queryParams(options)
+resetPassword.url = (options?: RouteQueryOptions) => {
+    return resetPassword.definition.url + queryParams(options)
 }
 
 /**
@@ -194,8 +194,8 @@ update.url = (options?: RouteQueryOptions) => {
  * @see app/Http/Controllers/AuthController.php:112
  * @route '/password/reset'
  */
-update.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: update.url(options),
+resetPassword.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: resetPassword.url(options),
     method: 'post',
 })
 
@@ -204,8 +204,8 @@ update.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:112
  * @route '/password/reset'
  */
-    const updateForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(options),
+    const resetPasswordForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: resetPassword.url(options),
         method: 'post',
     })
 
@@ -214,12 +214,12 @@ update.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
  * @see app/Http/Controllers/AuthController.php:112
  * @route '/password/reset'
  */
-        updateForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(options),
+        resetPasswordForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: resetPassword.url(options),
             method: 'post',
         })
     
-    update.form = updateForm
+    resetPassword.form = resetPasswordForm
 /**
 * @see \Laravel\Fortify\Http\Controllers\ConfirmedPasswordStatusController::confirmation
  * @see vendor/laravel/fortify/src/Http/Controllers/ConfirmedPasswordStatusController.php:17
@@ -474,12 +474,14 @@ reset.head = (args: { token: string | number } | [token: string | number ] | str
     
     reset.form = resetForm
 const password = {
-    email: Object.assign(email, email),
-update: Object.assign(update, update),
-confirmation: Object.assign(confirmation, confirmation),
-confirm: Object.assign(confirm, confirm),
-request: Object.assign(request, request),
-reset: Object.assign(reset, reset),
+    email,
+    sendResetLink,
+    update,
+    resetPassword,
+    confirmation,
+    confirm,
+    request,
+    reset,
 }
 
 export default password
