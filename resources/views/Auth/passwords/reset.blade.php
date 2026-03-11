@@ -16,7 +16,7 @@
             Reset Your Password
         </h2>
 
-         {{-- Error Message --}}
+        {{-- Error Message --}}
         @if (session('error'))
             <div class="bg-red-100 text-red-700 p-3 rounded mb-4">
                 {{ session('error') }}
@@ -24,7 +24,7 @@
         @endif
 
 
-        <form method="POST" action="{{ route('password.update') }}">
+        <form method="POST" action="{{ route('auth.password.update') }}">
             @csrf
 
             <input type="hidden" name="token" value="{{ $token }}">

@@ -20,9 +20,9 @@
 
         {{-- Success Message --}}
         @if (session('status'))
-           <div class="bg-green-100 text-green-700 p-3 rounded mb-4 text-sm font-medium">
+            <div class="bg-green-100 text-green-700 p-3 rounded mb-4 text-sm font-medium">
                 {{ session('status') }}
-           </div>
+            </div>
         @endif
 
         {{-- Error Message --}}
@@ -63,7 +63,7 @@
                     <span class="text-sm text-gray-600">Remember me</span>
                 </label>
 
-                <a href="{{ route('password.request') }}" class="text-sm text-blue-600 hover:underline">
+                <a href="{{ route('auth.password.request') }}" class="text-sm text-blue-600 hover:underline">
                     Forgot password?
                 </a>
             </div>

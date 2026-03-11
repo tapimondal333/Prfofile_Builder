@@ -58,7 +58,7 @@
             {{-- settings items --}}
             <div x-show="open" x-collapse class="ml-6 mt-1 space-y-1">
 
-                <a href="{{ route('password.request') }}"
+                <a href="{{ route('auth.password.request') }}"
                     class="block px-3 py-2 rounded text-sm
            {{ request()->routeIs('password.*') ? 'bg-red-700 text-white font-semibold' : 'hover:bg-red-700' }}">
                     🔑 Change Password

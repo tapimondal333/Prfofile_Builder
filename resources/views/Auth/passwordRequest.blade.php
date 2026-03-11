@@ -18,11 +18,11 @@
             Forgot Your Password?
         </h2>
 
-         {{-- Success Message --}}
+        {{-- Success Message --}}
         @if (session('status'))
-           <div class="bg-green-100 text-green-700 p-3 rounded mb-4 text-sm font-medium">
+            <div class="bg-green-100 text-green-700 p-3 rounded mb-4 text-sm font-medium">
                 {{ session('status') }}
-           </div>
+            </div>
         @endif
 
         {{-- Error Message --}}
@@ -33,7 +33,7 @@
         @endif
 
         {{-- Login Form --}}
-        <form method="POST" action="{{ route('password.email') }}">
+        <form method="POST" action="{{ route('auth.password.email') }}">
             @csrf
 
             {{-- Email --}}
@@ -56,7 +56,7 @@
         {{-- Register Link --}}
         <p class="text-center text-sm text-gray-600 mt-6">
             Don’t have an account?
-            <a href="{{route('register')}}" class="text-blue-600 hover:underline">
+            <a href="{{ route('register') }}" class="text-blue-600 hover:underline">
                 Sign up
             </a>
         </p>

@@ -16,10 +16,10 @@ Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerPost'])->name('register.post');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login.post');
-Route::get('password/reset', [AuthController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('password/email', [AuthController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset', [AuthController::class, 'showLinkRequestForm'])->name('auth.password.request');
+Route::post('password/email', [AuthController::class, 'sendResetLinkEmail'])->name('auth.password.email');
 Route::get('password/reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
-Route::post('password/reset', [AuthController::class, 'reset'])->name('password.update');
+Route::post('password/reset', [AuthController::class, 'reset'])->name('auth.password.update');
 
 Route::middleware(['auth', 'verified', IsUser::class])->group(function () {
     Route::get('/dashboard',[DashboardController::class, 'dashboard'])->name('dashboard');
