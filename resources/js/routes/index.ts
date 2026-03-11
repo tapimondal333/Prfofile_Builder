@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../wayfinder'
 /**
 * @see \App\Http\Controllers\AuthController::user_logout
- * @see app/Http/Controllers/AuthController.php:136
+ * @see app/Http/Controllers/AuthController.php:135
  * @route '/logout'
  */
 export const user_logout = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -16,7 +16,7 @@ user_logout.definition = {
 
 /**
 * @see \App\Http\Controllers\AuthController::user_logout
- * @see app/Http/Controllers/AuthController.php:136
+ * @see app/Http/Controllers/AuthController.php:135
  * @route '/logout'
  */
 user_logout.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ user_logout.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\AuthController::user_logout
- * @see app/Http/Controllers/AuthController.php:136
+ * @see app/Http/Controllers/AuthController.php:135
  * @route '/logout'
  */
 user_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -35,7 +35,7 @@ user_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\AuthController::user_logout
- * @see app/Http/Controllers/AuthController.php:136
+ * @see app/Http/Controllers/AuthController.php:135
  * @route '/logout'
  */
     const user_logoutForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -45,7 +45,7 @@ user_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\AuthController::user_logout
- * @see app/Http/Controllers/AuthController.php:136
+ * @see app/Http/Controllers/AuthController.php:135
  * @route '/logout'
  */
         user_logoutForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -368,7 +368,7 @@ dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     dashboard.form = dashboardForm
 /**
 * @see \App\Http\Controllers\AuthController::admin_logout
- * @see app/Http/Controllers/AuthController.php:146
+ * @see app/Http/Controllers/AuthController.php:145
  * @route '/admin/logout'
  */
 export const admin_logout = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -383,7 +383,7 @@ admin_logout.definition = {
 
 /**
 * @see \App\Http\Controllers\AuthController::admin_logout
- * @see app/Http/Controllers/AuthController.php:146
+ * @see app/Http/Controllers/AuthController.php:145
  * @route '/admin/logout'
  */
 admin_logout.url = (options?: RouteQueryOptions) => {
@@ -392,7 +392,7 @@ admin_logout.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\AuthController::admin_logout
- * @see app/Http/Controllers/AuthController.php:146
+ * @see app/Http/Controllers/AuthController.php:145
  * @route '/admin/logout'
  */
 admin_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -402,7 +402,7 @@ admin_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\AuthController::admin_logout
- * @see app/Http/Controllers/AuthController.php:146
+ * @see app/Http/Controllers/AuthController.php:145
  * @route '/admin/logout'
  */
     const admin_logoutForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -412,7 +412,7 @@ admin_logout.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\AuthController::admin_logout
- * @see app/Http/Controllers/AuthController.php:146
+ * @see app/Http/Controllers/AuthController.php:145
  * @route '/admin/logout'
  */
         admin_logoutForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
