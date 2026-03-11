@@ -20,11 +20,15 @@ export default defineConfig({
         }),
         tailwindcss(),
         wayfinder({
-             command: process.env.NODE_ENV === 'production' 
-        ? 'true'  // runs harmless echo in production
-        : 'php artisan wayfinder:generate --with-form', // runs normally locally
+            command: process.env.NODE_ENV === 'production'
+        ? 'php artisan wayfinder:generate --with-form'
+        : 'php artisan wayfinder:generate --with-form',
+    formVariants: true,
+    patterns: [
+        'App\\Http\\Controllers\\*',
+    ],
     
-            formVariants: true,
+            
         
         }),
      
