@@ -44,16 +44,16 @@ Route::middleware(['auth', 'verified', IsUser::class])->group(function () {
     Route::delete('/skills/{skill}', [TechController::class, 'destroySkill'])->name('skill.destroy');
     Route::get('/skills/{skill}', [TechController::class, 'showSkill'])->name('skill.show');
 
-    route::get('/portfolio/experience', [TechController::class, 'experience'])->name('portfolio.experience');
+    Route::get('/portfolio/experience', [TechController::class, 'experience'])->name('portfolio.experience');
     Route::post('/experiences', [TechController::class, 'storeExperience'])->name('experience.store');
     Route::put('/experiences/{experience}', [TechController::class, 'updateExperience'])->name('experience.update');
     Route::delete('/experiences/{experience}', [TechController::class, 'destroyExperience'])->name('experience.destroy');
     Route::get('/experiences/{experience}', [TechController::class, 'showExperience'])->name('experience.show');
 
-    route::get('/portfolio/preview', [UserController::class, 'preview'])->name('portfolio.preview');
+    Route::get('/portfolio/preview', [UserController::class, 'preview'])->name('portfolio.preview');
 
-    route::get('/contact_us', [UserController::class, 'contactUs'])->name('contact_us.index');
-    route::post('/contact_us', [UserController::class, 'submitContactUs'])->name('contact_us.submit');
+    Route::get('/contact_us', [UserController::class, 'contactUs'])->name('contact_us.index');
+    Route::post('/contact_us', [UserController::class, 'submitContactUs'])->name('contact_us.submit');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('user_logout');
 

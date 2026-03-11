@@ -135,7 +135,7 @@ class UserController extends Controller
             $path = $file->store('contact-files', 'public');
             $data['file'] = $path;
         }
-dump($data);
+
         // Create contact message
         $contact = new Contact();
         $contact->user_id = $user->id;

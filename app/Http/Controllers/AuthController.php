@@ -39,7 +39,6 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'role' => 'in:admin,user',
         ]);
-dump($request->all());
 
         // Create the user
         $user = User::create([
