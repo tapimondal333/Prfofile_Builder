@@ -23,7 +23,7 @@ export default defineConfig({
         tailwindcss(),
         wayfinder({
              command: process.env.NODE_ENV === 'production' 
-        ? 'echo "skipping wayfinder"'  // runs harmless echo in production
+        ? 'true'  // runs harmless echo in production
         : 'php artisan wayfinder:generate --with-form', // runs normally locally
     
             formVariants: true,
